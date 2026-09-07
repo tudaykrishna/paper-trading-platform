@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #0f172a; -webkit-font-smoothing: antialiased; }
+    a { color: #4f46e5; text-decoration: none; } a:hover { color: #4338ca; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Roboto Mono", monospace; font-variant-numeric: tabular-nums; }
+  </style>
+</helmet>
+<div style="position: relative; min-height: 900px;">
+  <!-- dimmed backdrop: chart screen with the permanent rail -->
+  <div style="filter: blur(1px); opacity: 0.5; pointer-events: none;">
+    <dc-import name="Nav" active="chart" user="Uday Krishna" hint-size="100%,56px"></dc-import>
+    <div style="display: flex; align-items: stretch; min-height: 844px;">
+      <div style="width: 300px; flex-shrink: 0;"><dc-import name="Rail" hint-size="300px,100%"></dc-import></div>
+      <div style="flex: 1; background: #f7f8fa; padding: 28px 32px;">
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 20px; height: 420px;">
+          <div style="font-size: 17px; font-weight: 650;">RELIANCE</div>
+          <div class="mono" style="font-size: 15px; font-weight: 600; margin-top: 4px;">₹1,322.40</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.4);"></div>
+
+  <!-- modal -->
+  <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px;">
+    <div style="width: 420px; background: #fff; border-radius: 16px; box-shadow: 0 24px 60px rgba(15,23,42,0.28); overflow: hidden;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; padding: 20px 22px 0;">
+        <div>
+          <div style="font-size: 17px; font-weight: 650;">RELIANCE</div>
+          <div style="font-size: 12px; color: #94a3b8; margin-top: 2px;">Reliance Industries Ltd · LTP <span class="mono">₹1,322.40</span></div>
+        </div>
+        <span style="color: #94a3b8;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+      </div>
+
+      <div style="padding: 18px 22px 22px;">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 16px;">
+          <div style="text-align: center; padding: 9px; border-radius: 9px; font-size: 13px; font-weight: 700; background: #16a34a; color: #fff;">BUY</div>
+          <div style="text-align: center; padding: 9px; border-radius: 9px; font-size: 13px; font-weight: 700; background: #f1f5f9; color: #64748b;">SELL</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 13px; font-size: 13px;">
+          <div>
+            <div style="color: #64748b; margin-bottom: 6px;">Quantity <span style="color: #cbd5e1;">(1 / lot)</span></div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 92px; border: 1px solid #d7dbe0; border-radius: 8px; padding: 8px 10px; background: #fff;" class="mono">10</div>
+              <span style="color: #94a3b8;">= 10 units</span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+            <div>
+              <div style="color: #64748b; margin-bottom: 6px;">Product</div>
+              <div style="border: 1px solid #d7dbe0; border-radius: 8px; padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; background: #fff;">
+                <span>CNC</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+            <div>
+              <div style="color: #64748b; margin-bottom: 6px;">Type</div>
+              <div style="border: 1px solid #d7dbe0; border-radius: 8px; padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; background: #fff;">
+                <span>LIMIT</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="color: #64748b; margin-bottom: 6px;">Limit price</div>
+            <div style="border: 1px solid #4f46e5; border-radius: 8px; padding: 8px 10px; background: #fff; box-shadow: 0 0 0 3px #eef2ff;" class="mono">1,318.00</div>
+          </div>
+          <div>
+            <div style="color: #64748b; margin-bottom: 6px;">Trigger price <span style="color: #cbd5e1;">(SL / SL-M only)</span></div>
+            <div style="border: 1px solid #e6e8ec; border-radius: 8px; padding: 8px 10px; background: #f8fafc; color: #cbd5e1;" class="mono">—</div>
+          </div>
+
+          <div style="background: #f8fafc; border-radius: 8px; padding: 9px 12px; font-size: 12px; color: #64748b; display: flex; justify-content: space-between;">
+            <span>Approx order value</span>
+            <span class="mono" style="font-weight: 600; color: #334155;">₹13,180.00</span>
+          </div>
+
+          <button style="margin-top: 2px; width: 100%; background: #16a34a; color: #fff; border: none; border-radius: 10px; padding: 12px; font-size: 14px; font-weight: 700; cursor: pointer;">BUY RELIANCE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1500,"height":900}}'>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>

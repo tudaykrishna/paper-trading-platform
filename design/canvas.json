@@ -1,0 +1,30 @@
+{
+  "artboards": [
+    { "file": "Login.dc.html", "x": 0, "y": 0, "w": 1200, "h": 780 },
+    { "file": "Register.dc.html", "x": 1320, "y": 0, "w": 1200, "h": 820 },
+
+    { "file": "Main.dc.html", "title": "Dashboard", "x": 0, "y": 1020, "w": 1500, "h": 940 },
+    { "file": "OrderPad.dc.html", "title": "Order Pad", "x": 1620, "y": 1020, "w": 1500, "h": 920 },
+    { "file": "Chart.dc.html", "x": 3240, "y": 1020, "w": 1500, "h": 920 },
+
+    { "file": "Orders.dc.html", "x": 0, "y": 2160, "w": 1500, "h": 740 },
+    { "file": "Positions.dc.html", "x": 1620, "y": 2160, "w": 1500, "h": 840 },
+    { "file": "Holdings.dc.html", "x": 3240, "y": 2160, "w": 1500, "h": 860 },
+
+    { "file": "OptionChain.dc.html", "title": "Option Chain", "x": 0, "y": 3220, "w": 1500, "h": 840 },
+    { "file": "Reports.dc.html", "x": 1620, "y": 3220, "w": 1500, "h": 1020 },
+    { "file": "Leaderboard.dc.html", "x": 3240, "y": 3220, "w": 1500, "h": 780 },
+
+    { "file": "Nav.dc.html", "title": "Top nav (component)", "x": 0, "y": 4440, "w": 1200, "h": 150 },
+    { "file": "Rail.dc.html", "title": "Watchlist rail (component)", "x": 1320, "y": 4440, "w": 340, "h": 1180 },
+    { "file": "StyleTile.dc.html", "title": "Style tile", "x": 1780, "y": 4440, "w": 1200, "h": 1000 }
+  ],
+  "annotations": [
+    { "id": "row-auth", "x": -380, "y": 20, "w": 300, "text": "Auth — the only screens without the app shell. Centered card on a plain ground." },
+    { "id": "row-home", "x": -380, "y": 1040, "w": 300, "text": "The watchlist is now a permanent left rail on every screen. The Order Pad is the modal that opens from any Buy / Sell." },
+    { "id": "row-trading", "x": -380, "y": 2180, "w": 300, "text": "Live trading views. Green / red appear only on P&L and price change — never on chrome." },
+    { "id": "row-analysis", "x": -380, "y": 3240, "w": 300, "text": "Analysis screens. The style tile documents every token used across the set." },
+    { "id": "rail-note", "x": 1320, "y": 4250, "w": 340, "text": "Permanent left rail: list tabs + a + to add more lists. The default 'Popular' tab ships with 20 large-caps and indices; hovering a row reveals Buy / Sell / chart / remove." }
+  ],
+  "launch": { "view": "canvas" }
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #0f172a; -webkit-font-smoothing: antialiased; }
+    a { color: #4f46e5; text-decoration: none; } a:hover { color: #4338ca; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Roboto Mono", monospace; font-variant-numeric: tabular-nums; }
+    .sec { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin: 0 0 14px; }
+    .card { background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 22px; }
+  </style>
+</helmet>
+<div style="max-width: 1080px; margin: 0 auto; padding: 32px;">
+  <h1 style="margin: 0 0 4px; font-size: 22px; font-weight: 650;">Style tile</h1>
+  <p style="margin: 0 0 26px; font-size: 13px; color: #64748b;">Modern-light system — one indigo accent, green/red reserved for P&amp;L only.</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+    <!-- logo -->
+    <div class="card" style="grid-column: span 2;">
+      <p class="sec">Logo</p>
+      <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: flex-end; gap: 24px;">
+          <img src="logo.png" alt="" style="width: 64px; height: 64px; display: block;">
+          <img src="logo.png" alt="" style="width: 32px; height: 32px; display: block;">
+          <img src="logo.png" alt="" style="width: 20px; height: 20px; display: block;">
+          <img src="logo.png" alt="" style="width: 16px; height: 16px; display: block;">
+        </div>
+        <div style="display: flex; align-items: center; gap: 9px; border-left: 1px solid #e6e8ec; padding-left: 40px;">
+          <img src="logo.png" alt="" style="width: 24px; height: 24px; display: block;">
+          <span style="font-size: 16px; font-weight: 700; letter-spacing: -0.01em;">Paper&nbsp;Trading</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 9px; background: #0f172a; border-radius: 10px; padding: 10px 16px;">
+          <img src="logo.png" alt="" style="width: 22px; height: 22px; display: block;">
+          <span style="font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.01em;">Paper&nbsp;Trading</span>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #94a3b8; margin: 14px 0 0;">Origami paper boat on a rising trend line — transparent PNG, reads down to 16&nbsp;px.</p>
+    </div>
+
+    <!-- colour tokens -->
+    <div class="card">
+      <p class="sec">Colour tokens</p>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+        <div><div style="height: 44px; border-radius: 10px; background: #ffffff; border: 1px solid #e6e8ec;"></div><div style="font-size: 12px; margin-top: 6px;"><b>surface</b> <span class="mono" style="color: #94a3b8;">#FFFFFF</span></div></div>
+        <div><div style="height: 44px; border-radius: 10px; background: #f7f8fa; border: 1px solid #e6e8ec;"></div><div style="font-size: 12px; margin-top: 6px;"><b>ground</b> <span class="mono" style="color: #94a3b8;">#F7F8FA</span></div></div>
+        <div><div style="height: 44px; border-radius: 10px; background: #0f172a;"></div><div style="font-size: 12px; margin-top: 6px;"><b>ink</b> <span class="mono" style="color: #94a3b8;">#0F172A</span></div></div>
+        <div><div style="height: 44px; border-radius: 10px; background: #64748b;"></div><div style="font-size: 12px; margin-top: 6px;"><b>muted</b> <span class="mono" style="color: #94a3b8;">#64748B</span></div></div>
+        <div><div style="height: 44px; border-radius: 10px; background: #e6e8ec;"></div><div style="font-size: 12px; margin-top: 6px;"><b>border</b> <span class="mono" style="color: #94a3b8;">#E6E8EC</span></div></div>
+        <div><div style="height: 44px; border-radius: 10px; background: #4f46e5;"></div><div style="font-size: 12px; margin-top: 6px;"><b>accent</b> <span class="mono" style="color: #94a3b8;">#4F46E5</span></div></div>
+        <div><div style="height: 44px; border-radius: 10px; background: #16a34a;"></div><div style="font-size: 12px; margin-top: 6px;"><b>up</b> <span class="mono" style="color: #94a3b8;">#16A34A</span></div></div>
+        <div><div style="height: 44px; border-radius: 10px; background: #dc2626;"></div><div style="font-size: 12px; margin-top: 6px;"><b>down</b> <span class="mono" style="color: #94a3b8;">#DC2626</span></div></div>
+      </div>
+    </div>
+
+    <!-- type scale -->
+    <div class="card">
+      <p class="sec">Type scale · system-ui</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 24px; font-weight: 650;">Big stat · 24 / 650 <span class="mono" style="font-size: 14px; color: #94a3b8;">tnum</span></div>
+        <div style="font-size: 20px; font-weight: 650;">Page title · 20 / 650</div>
+        <div style="font-size: 15px; font-weight: 650;">Section head · 15 / 650</div>
+        <div style="font-size: 13px;">Body &amp; table cell · 13 / 400</div>
+        <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; font-weight: 600;">Label · 11 / 600 / caps</div>
+        <div class="mono" style="font-size: 13px;">Numerals · ₹1,23,456.78 · monospace tabular</div>
+      </div>
+    </div>
+
+    <!-- buttons -->
+    <div class="card">
+      <p class="sec">Buttons</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        <button style="background: #4f46e5; color: #fff; border: none; border-radius: 9px; padding: 9px 16px; font-size: 13px; font-weight: 600;">Primary</button>
+        <button style="background: #fff; color: #334155; border: 1px solid #e6e8ec; border-radius: 9px; padding: 9px 16px; font-size: 13px; font-weight: 500;">Ghost</button>
+        <button style="background: #dc2626; color: #fff; border: none; border-radius: 9px; padding: 9px 16px; font-size: 13px; font-weight: 600;">Danger</button>
+        <button style="background: #16a34a; color: #fff; border: none; border-radius: 9px; padding: 9px 16px; font-size: 13px; font-weight: 700;">Buy</button>
+        <button style="background: #dc2626; color: #fff; border: none; border-radius: 9px; padding: 9px 16px; font-size: 13px; font-weight: 700;">Sell</button>
+      </div>
+    </div>
+
+    <!-- chips -->
+    <div class="card">
+      <p class="sec">Status chips</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 3px 9px; background: #fef3c7; color: #b45309;">OPEN</span>
+        <span style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 3px 9px; background: #dcfce7; color: #15803d;">COMPLETE</span>
+        <span style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 3px 9px; background: #f1f5f9; color: #64748b;">CANCELLED</span>
+        <span style="font-size: 11px; font-weight: 600; border-radius: 6px; padding: 3px 9px; background: #fee2e2; color: #b91c1c;">REJECTED</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;">
+        <span style="font-size: 12px; font-weight: 600; color: #4f46e5; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 999px; padding: 5px 11px;">Filter · active</span>
+        <span style="font-size: 12px; font-weight: 500; color: #64748b; background: #fff; border: 1px solid #e6e8ec; border-radius: 999px; padding: 5px 11px;">Filter · rest</span>
+      </div>
+    </div>
+
+    <!-- stat tile spec -->
+    <div class="card" style="grid-column: span 2;">
+      <p class="sec">Stat tile</p>
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 18px 20px; width: 220px;">
+          <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; font-weight: 600;">Day P&amp;L</div>
+          <div class="mono" style="font-size: 24px; font-weight: 650; margin-top: 8px; color: #16a34a;">+₹4,218.60</div>
+        </div>
+        <div style="font-size: 12px; color: #64748b; line-height: 1.7; padding-top: 4px;">
+          card <span class="mono">border #E6E8EC · radius 14</span><br>
+          padding <span class="mono">18 / 20</span> &nbsp;·&nbsp; label→value gap <span class="mono">8</span><br>
+          label <span class="mono">11 / 600 / caps / #94A3B8</span><br>
+          value <span class="mono">24 / 650 / tabular</span>; green/red only when it's P&amp;L
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

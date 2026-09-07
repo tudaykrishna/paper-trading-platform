@@ -1,0 +1,45 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Node ----
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# ---- Secrets / local config ----
+# .env holds SECRET_KEY and the Upstox API key/secret/token — never commit it.
+.env
+.env.*
+!.env.example
+frontend/.env
+!frontend/.env.example
+
+# ---- Databases / data ----
+*.sqlite3
+pgdata/
+
+# ---- Design canvas ----
+# regenerated from the .dc.html sources with the design skill helper; ~2.5 MB
+design/paper-trading-ui.html
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Misc ----
+*.log
+scratchpad/

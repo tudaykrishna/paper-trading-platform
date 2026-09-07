@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #0f172a; -webkit-font-smoothing: antialiased; }
+    a { color: #4f46e5; text-decoration: none; } a:hover { color: #4338ca; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Roboto Mono", monospace; font-variant-numeric: tabular-nums; }
+    table { border-collapse: collapse; width: 100%; }
+    th { text-align: left; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: #94a3b8; font-weight: 600; padding: 11px 16px; background: #fafbfc; }
+    td { padding: 12px 16px; font-size: 13px; border-top: 1px solid #eef0f3; }
+  </style>
+</helmet>
+<div>
+  <dc-import name="Nav" active="positions" user="Uday Krishna" hint-size="100%,56px"></dc-import>
+
+  <div style="display: flex; align-items: stretch; min-height: 900px;">
+    <div style="width: 300px; flex-shrink: 0;">
+      <dc-import name="Rail" hint-size="300px,100%"></dc-import>
+    </div>
+
+    <div style="flex: 1; min-width: 0; background: #f7f8fa; padding: 28px 32px 56px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+        <h1 style="margin: 0; font-size: 22px; font-weight: 650; letter-spacing: -0.01em;">Positions</h1>
+        <button style="background: #fff; border: 1px solid #e6e8ec; border-radius: 9px; padding: 8px 14px; font-size: 13px; font-weight: 500; color: #334155; cursor: pointer;">Square off MIS</button>
+      </div>
+
+      <div style="display: flex; gap: 24px; margin-bottom: 16px;">
+        <div><span style="font-size: 12px; color: #94a3b8;">Day P&amp;L&nbsp;&nbsp;</span><span class="mono" style="font-weight: 650; color: #16a34a;">+₹4,218.60</span></div>
+        <div><span style="font-size: 12px; color: #94a3b8;">Margin used&nbsp;&nbsp;</span><span class="mono" style="font-weight: 650;">₹28,940.00</span></div>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; overflow: hidden;">
+        <table>
+          <thead>
+            <tr>
+              <th>Instrument</th><th>Product</th><th style="text-align: right;">Net qty</th>
+              <th style="text-align: right;">Avg</th><th style="text-align: right;">LTP</th>
+              <th style="text-align: right;">Unrealized</th><th style="text-align: right;">Realized</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{rows}}" as="r" hint-placeholder-count="3">
+              <tr>
+                <td style="font-weight: 600;">{{r.sym}}</td>
+                <td style="color: #475569;">{{r.product}}</td>
+                <td class="mono" style="text-align: right; {{r.qtyStyle}}">{{r.qty}}</td>
+                <td class="mono" style="text-align: right;">{{r.avg}}</td>
+                <td class="mono" style="text-align: right;">{{r.ltp}}</td>
+                <td class="mono" style="text-align: right; {{r.uStyle}}">{{r.unreal}}</td>
+                <td class="mono" style="text-align: right; {{r.rStyle}}">{{r.real}}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #cbd5e1; font-weight: 600; margin-bottom: 8px;">Empty state</div>
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 40px; text-align: center; font-size: 13px; color: #94a3b8;">
+          No open positions today. Placing an intraday (MIS) or F&amp;O order opens one here.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1500,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const up = 'color: #16a34a;', dn = 'color: #dc2626;';
+    return {
+      rows: [
+        { sym: 'NIFTY 24000 CE', product: 'NRML', qty: '−50', qtyStyle: dn, avg: '118.40', ltp: '96.75', unreal: '−₹1,082.50', uStyle: dn, real: '₹0.00', rStyle: 'color: #64748b;' },
+        { sym: 'TCS', product: 'MIS', qty: '+5', qtyStyle: up, avg: '3,864.00', ltp: '3,918.70', unreal: '+₹273.50', uStyle: up, real: '₹0.00', rStyle: 'color: #64748b;' },
+        { sym: 'GOLDM SEP FUT', product: 'MIS', qty: '+100', qtyStyle: up, avg: '7,190.00', ltp: '7,241.00', unreal: '+₹5,100.00', uStyle: up, real: '−₹72.00', rStyle: dn },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

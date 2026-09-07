@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #0f172a; -webkit-font-smoothing: antialiased; }
+    a { color: #4f46e5; text-decoration: none; font-weight: 500; } a:hover { color: #4338ca; }
+  </style>
+</helmet>
+<div style="min-height: 800px; display: flex; align-items: center; justify-content: center; padding: 40px;">
+  <div style="width: 380px;">
+    <div style="display: flex; align-items: center; gap: 10px; justify-content: center; margin-bottom: 28px;">
+      <img src="logo.png" alt="" style="width: 34px; height: 34px; display: block;">
+      <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.01em;">Paper&nbsp;Trading</span>
+    </div>
+    <div style="background: #ffffff; border: 1px solid #e6e8ec; border-radius: 16px; padding: 28px; box-shadow: 0 1px 2px rgba(15,23,42,0.04);">
+      <h1 style="margin: 0 0 4px; font-size: 19px; font-weight: 650;">Create account</h1>
+      <p style="margin: 0 0 22px; font-size: 13px; color: #64748b;">Starts with ₹10,00,000 in virtual funds.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <label style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 12px; font-weight: 600; color: #475569;">Name</span>
+          <div style="border: 1px solid #d7dbe0; border-radius: 9px; padding: 10px 12px; font-size: 14px; background: #fff;">Uday Krishna</div>
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 12px; font-weight: 600; color: #475569;">Email</span>
+          <div style="border: 1px solid #d7dbe0; border-radius: 9px; padding: 10px 12px; font-size: 14px; background: #fff;">you@example.com</div>
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 12px; font-weight: 600; color: #475569;">Password</span>
+          <div style="border: 1px solid #d7dbe0; border-radius: 9px; padding: 10px 12px; font-size: 14px; color: #94a3b8; background: #fff;">At least 8 characters</div>
+        </label>
+        <button style="margin-top: 4px; background: #4f46e5; color: #fff; border: none; border-radius: 9px; padding: 11px; font-size: 14px; font-weight: 600; cursor: pointer;">Create account</button>
+      </div>
+    </div>
+    <p style="text-align: center; margin: 18px 0 0; font-size: 13px; color: #64748b;">
+      Already have an account? <a href="#">Log in</a>
+    </p>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

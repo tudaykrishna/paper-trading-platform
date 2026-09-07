@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #0f172a; background: #f7f8fa; }
+    a { color: #4f46e5; text-decoration: none; } a:hover { color: #4338ca; }
+  </style>
+</helmet>
+<div style="display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 32px; background: #ffffff; border-bottom: 1px solid #e6e8ec;">
+  <div style="display: flex; align-items: center; gap: 28px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <img src="logo.png" alt="" style="width: 24px; height: 24px; display: block;">
+      <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.01em;">Paper&nbsp;Trading</span>
+    </div>
+    <nav style="display: flex; align-items: center; gap: 2px;">
+      <sc-for list="{{links}}" as="link" hint-placeholder-count="9">
+        <span style="font-size: 13px; padding: 6px 11px; border-radius: 8px; {{link.style}}">{{link.label}}</span>
+      </sc-for>
+    </nav>
+  </div>
+  <div style="display: flex; align-items: center; gap: 14px;">
+    <span style="font-size: 13px; color: #64748b;">{{user}}</span>
+    <button style="background: #ffffff; border: 1px solid #e6e8ec; border-radius: 8px; padding: 7px 13px; font-size: 13px; font-weight: 500; color: #334155; cursor: pointer;">Log out</button>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"active":{"editor":"enum","default":"dashboard","options":["dashboard","chart","orders","positions","holdings","options","reports","leaderboard"]},"user":{"editor":"text","default":"Uday Krishna"},"$preview":{"width":1200,"height":56}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active ?? 'dashboard';
+    const defs = [
+      ['dashboard', 'Dashboard'], ['chart', 'Chart'],
+      ['orders', 'Orders'], ['positions', 'Positions'], ['holdings', 'Holdings'],
+      ['options', 'Options'], ['reports', 'Reports'], ['leaderboard', 'Leaderboard'],
+    ];
+    return {
+      user: this.props.user ?? 'Uday Krishna',
+      links: defs.map(([id, label]) => ({
+        id, label,
+        style: id === active
+          ? 'color: #4f46e5; font-weight: 600; background: #eef2ff;'
+          : 'color: #475569; font-weight: 500; background: transparent;',
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

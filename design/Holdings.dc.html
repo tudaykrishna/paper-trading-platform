@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #0f172a; -webkit-font-smoothing: antialiased; }
+    a { color: #4f46e5; text-decoration: none; } a:hover { color: #4338ca; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Roboto Mono", monospace; font-variant-numeric: tabular-nums; }
+    table { border-collapse: collapse; width: 100%; }
+    th { text-align: left; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: #94a3b8; font-weight: 600; padding: 11px 16px; background: #fafbfc; }
+    td { padding: 12px 16px; font-size: 13px; border-top: 1px solid #eef0f3; }
+  </style>
+</helmet>
+<div>
+  <dc-import name="Nav" active="holdings" user="Uday Krishna" hint-size="100%,56px"></dc-import>
+
+  <div style="display: flex; align-items: stretch; min-height: 900px;">
+    <div style="width: 300px; flex-shrink: 0;">
+      <dc-import name="Rail" hint-size="300px,100%"></dc-import>
+    </div>
+
+    <div style="flex: 1; min-width: 0; background: #f7f8fa; padding: 28px 32px 56px;">
+      <h1 style="margin: 0 0 18px; font-size: 22px; font-weight: 650; letter-spacing: -0.01em;">Holdings</h1>
+
+      <div style="display: flex; gap: 28px; margin-bottom: 16px;">
+        <div><span style="font-size: 12px; color: #94a3b8;">Invested&nbsp;&nbsp;</span><span class="mono" style="font-weight: 650;">₹1,08,004.00</span></div>
+        <div><span style="font-size: 12px; color: #94a3b8;">Current&nbsp;&nbsp;</span><span class="mono" style="font-weight: 650;">₹1,12,540.00</span></div>
+        <div><span style="font-size: 12px; color: #94a3b8;">Total P&amp;L&nbsp;&nbsp;</span><span class="mono" style="font-weight: 650; color: #16a34a;">+₹4,536.00&nbsp;&nbsp;+4.20%</span></div>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; overflow: hidden;">
+        <table>
+          <thead>
+            <tr>
+              <th>Instrument</th><th style="text-align: right;">Qty</th><th style="text-align: right;">Avg</th>
+              <th style="text-align: right;">LTP</th><th style="text-align: right;">Current value</th><th style="text-align: right;">P&amp;L</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{rows}}" as="r" hint-placeholder-count="4">
+              <tr>
+                <td style="font-weight: 600;">{{r.sym}}</td>
+                <td style="text-align: right;">
+                  <span class="mono">{{r.qty}}</span>
+                  <sc-if value="{{r.unsettled}}" hint-placeholder-val="{{false}}">
+                    <span style="font-size: 11px; color: #b45309; margin-left: 4px;">({{r.settled}} settled)</span>
+                  </sc-if>
+                </td>
+                <td class="mono" style="text-align: right;">{{r.avg}}</td>
+                <td class="mono" style="text-align: right;">{{r.ltp}}</td>
+                <td class="mono" style="text-align: right;">{{r.value}}</td>
+                <td class="mono" style="text-align: right; {{r.pnlStyle}}">{{r.pnl}}&nbsp;&nbsp;<span style="font-size: 11px;">{{r.pnlPct}}</span></td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #cbd5e1; font-weight: 600; margin-bottom: 8px;">Empty state</div>
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 40px; text-align: center; font-size: 13px; color: #94a3b8;">
+          No holdings yet. Buy a stock with product <b style="color: #64748b;">CNC</b> to start investing.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1500,"height":840}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const up = 'color: #16a34a;', dn = 'color: #dc2626;';
+    return {
+      rows: [
+        { sym: 'RELIANCE', qty: '10', unsettled: true, settled: '0', avg: '1,290.00', ltp: '1,322.40', value: '₹13,224.00', pnl: '+₹324.00', pnlPct: '+2.51%', pnlStyle: up },
+        { sym: 'INFY', qty: '25', unsettled: false, settled: '25', avg: '1,562.00', ltp: '1,548.10', value: '₹38,702.50', pnl: '−₹347.50', pnlPct: '−0.89%', pnlStyle: dn },
+        { sym: 'ITC', qty: '80', unsettled: false, settled: '80', avg: '438.10', ltp: '451.25', value: '₹36,100.00', pnl: '+₹1,052.00', pnlPct: '+3.00%', pnlStyle: up },
+        { sym: 'HDFCBANK', qty: '15', unsettled: false, settled: '15', avg: '1,632.90', ltp: '1,664.05', value: '₹24,960.75', pnl: '+₹467.25', pnlPct: '+1.91%', pnlStyle: up },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

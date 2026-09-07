@@ -1,0 +1,1 @@
+"""Paper trading platform backend."""

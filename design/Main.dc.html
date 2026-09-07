@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #0f172a; -webkit-font-smoothing: antialiased; }
+    a { color: #4f46e5; text-decoration: none; } a:hover { color: #4338ca; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Roboto Mono", monospace; font-variant-numeric: tabular-nums; }
+    table { border-collapse: collapse; width: 100%; }
+    th { text-align: left; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: #94a3b8; font-weight: 600; padding: 11px 16px; background: #fafbfc; }
+    td { padding: 12px 16px; font-size: 13px; border-top: 1px solid #eef0f3; }
+  </style>
+</helmet>
+<div>
+  <dc-import name="Nav" active="dashboard" user="Uday Krishna" hint-size="100%,56px"></dc-import>
+
+  <div style="display: flex; align-items: stretch; min-height: 900px;">
+    <div style="width: 300px; flex-shrink: 0;">
+      <dc-import name="Rail" hint-size="300px,100%"></dc-import>
+    </div>
+
+    <div style="flex: 1; min-width: 0; background: #f7f8fa; padding: 28px 32px 56px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px;">
+        <h1 style="margin: 0; font-size: 22px; font-weight: 650; letter-spacing: -0.01em;">Dashboard</h1>
+        <button style="background: #fff; border: 1px solid #e6e8ec; border-radius: 9px; padding: 8px 14px; font-size: 13px; font-weight: 500; color: #334155; cursor: pointer;">Reset account</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 18px 20px;">
+          <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; font-weight: 600;">Available cash</div>
+          <div class="mono" style="font-size: 23px; font-weight: 650; margin-top: 8px;">₹9,64,132.55</div>
+        </div>
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 18px 20px;">
+          <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; font-weight: 600;">Blocked margin</div>
+          <div class="mono" style="font-size: 23px; font-weight: 650; margin-top: 8px;">₹28,940.00</div>
+        </div>
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 18px 20px;">
+          <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; font-weight: 600;">Day P&amp;L</div>
+          <div class="mono" style="font-size: 23px; font-weight: 650; margin-top: 8px; color: #16a34a;">+₹4,218.60</div>
+        </div>
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; padding: 18px 20px;">
+          <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; font-weight: 600;">Holdings value</div>
+          <div class="mono" style="font-size: 23px; font-weight: 650; margin-top: 8px;">₹1,12,540.00</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <h2 style="margin: 0 0 12px; font-size: 15px; font-weight: 650;">Ledger</h2>
+        <div style="background: #fff; border: 1px solid #e6e8ec; border-radius: 14px; overflow: hidden;">
+          <table>
+            <thead>
+              <tr><th>Time</th><th>Type</th><th style="text-align: right;">Amount</th><th style="text-align: right;">Balance</th><th>Note</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: #64748b;">07 Sep, 10:32</td><td>CHARGE</td>
+                <td class="mono" style="text-align: right; color: #dc2626;">−₹23.61</td>
+                <td class="mono" style="text-align: right;">₹9,64,132.55</td>
+                <td style="color: #64748b;">Charges: BUY 10 RELIANCE</td>
+              </tr>
+              <tr>
+                <td style="color: #64748b;">07 Sep, 10:32</td><td>FILL</td>
+                <td class="mono" style="text-align: right; color: #dc2626;">−₹29,000.00</td>
+                <td class="mono" style="text-align: right;">₹9,64,156.16</td>
+                <td style="color: #64748b;">BUY 10 RELIANCE CNC</td>
+              </tr>
+              <tr>
+                <td style="color: #64748b;">07 Sep, 09:58</td><td>FILL</td>
+                <td class="mono" style="text-align: right; color: #16a34a;">+₹5,940.00</td>
+                <td class="mono" style="text-align: right;">₹9,93,156.16</td>
+                <td style="color: #64748b;">Realized P&amp;L NIFTY 24000 CE</td>
+              </tr>
+              <tr>
+                <td style="color: #64748b;">07 Sep, 09:15</td><td>DEPOSIT</td>
+                <td class="mono" style="text-align: right; color: #16a34a;">+₹10,00,000.00</td>
+                <td class="mono" style="text-align: right;">₹10,00,000.00</td>
+                <td style="color: #64748b;">Opening balance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1500,"height":920}}'>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>
